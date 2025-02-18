@@ -3,7 +3,7 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "ESNext",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -16,7 +16,7 @@
     "noImplicitOverride": true,
 
     /* If transpiling with TypeScript: */
-    "module": "NodeNext",
+    "module": "ESNext",
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
@@ -25,6 +25,8 @@
     "declaration": true,
 
     /* AND if you're building for a library in a monorepo: */
-    "declarationMap": true
+    "declarationMap": true,
+
+    "moduleResolution": "bundler"
   }
 }
