@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.1.2
+
+### Patch Changes
+
+- 216b703: add keywords
+
 ## 0.1.1
 
 ### Patch Changes
