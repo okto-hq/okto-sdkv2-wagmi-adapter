@@ -28,5 +28,6 @@
     "declarationMap": true,
 
     "moduleResolution": "bundler"
-  }
+  },
+  "exclude": ["commitlint.config.js", "commitlint.config.cjs"]
 }

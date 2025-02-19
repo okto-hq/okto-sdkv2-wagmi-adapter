@@ -9,7 +9,7 @@
     "build": "rm -rf dist && tsc -p tsconfig.json && tsc-esm-fix --target='dist' --ext='.js'",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "ci": "npm run build && npm run check-format",
+    "ci": "pnpm run build && pnpm run check-format",
     "local-release": "changeset version && changeset publish",
     "prepublishOnly": "npm run ci",
     "prepare": "husky",
