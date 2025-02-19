@@ -14,8 +14,6 @@ npm i @okto_web3/wagmi-adapter
 
 Add `okto` connector to wagmi configuration.
 
-````
-
 **Example**
 
 ```typescript
@@ -48,7 +46,7 @@ declare module 'wagmi' {
     config: ReturnType<typeof getConfig>;
   }
 }
-````
+```
 
 ### Layout Component
 

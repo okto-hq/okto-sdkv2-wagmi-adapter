@@ -45,7 +45,13 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "keywords": [],
+  "keywords": [
+    "wagmi",
+    "okto",
+    "adapter",
+    "web3",
+    "sdk"
+  ],
   "author": "Sparsh Agarwal <sparsh.a@coindcx.com>",
   "packageManager": "pnpm@10.4.1"
 }
