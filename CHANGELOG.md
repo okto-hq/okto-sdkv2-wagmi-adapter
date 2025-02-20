@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.2.0
+
+### Minor Changes
+
+- ef768bb: update core-js to 0.2.0
+
 ## 0.1.2
 
 ### Patch Changes
