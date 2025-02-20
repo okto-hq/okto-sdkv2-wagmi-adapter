@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.2.1
+
+### Patch Changes
+
+- fcec216: update corejs
+
 ## 0.2.0
 
 ### Minor Changes
