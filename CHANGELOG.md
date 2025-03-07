@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.2.2
+
+### Patch Changes
+
+- 752789c: add configurable google_client_id
+
 ## 0.2.1
 
 ### Patch Changes
