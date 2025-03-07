@@ -21,6 +21,7 @@ export type OktoParameters = Compute<
      * @default false
      */
     shimDisconnect?: boolean | undefined;
+    googleClientId?: string | undefined;
   }
 >;
 
@@ -32,6 +33,12 @@ export function okto(parameters: OktoParameters) {
     clientPrivateKey,
     clientSWA,
   } = parameters;
+  let { googleClientId } = parameters;
+
+  if (!googleClientId) {
+    googleClientId =
+      '1046271521155-0m453poi5gua03kehdcn5uon1vvu5u9j.apps.googleusercontent.com';
+  }
 
   type Provider = OktoProvider | undefined;
   type Properties = Record<string, unknown>;
@@ -57,8 +64,7 @@ export function okto(parameters: OktoParameters) {
       }
 
       google.accounts.id.initialize({
-        client_id:
-          '1046271521155-0m453poi5gua03kehdcn5uon1vvu5u9j.apps.googleusercontent.com',
+        client_id: googleClientId,
         auto_select: false,
         callback: (response: any) => {
           if (response.credential) {
