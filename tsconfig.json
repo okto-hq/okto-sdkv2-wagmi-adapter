@@ -29,5 +29,10 @@
 
     "moduleResolution": "bundler"
   },
-  "exclude": ["commitlint.config.js", "commitlint.config.cjs"]
+  "exclude": [
+    "commitlint.config.js",
+    "commitlint.config.cjs",
+    "example",
+    "example/**/*"
+  ]
 }
