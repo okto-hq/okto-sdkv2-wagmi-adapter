@@ -63,9 +63,53 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
         return numberToHex(this.chainId);
       case 'wallet_switchEthereumChain': {
         console.log('Switching chainId', params);
-
         this.updateChainId(params[0]);
         return true;
+      }
+
+      case 'personal_sign': {
+        try {
+          const [message, address] = params;
+          if (this.address.toLowerCase() !== address.toLowerCase()) {
+            throw new Error('The address or message hash is invalid');
+          }
+          const signature = await this.client.signMessage(message);
+          return signature || '0x';
+        } catch (_) {
+          return '0x';
+        }
+      }
+
+      case 'eth_sign': {
+        try {
+          const [address, messageHash] = params;
+          if (
+            this.address.toLowerCase() !== address.toLowerCase() ||
+            !messageHash.startsWith('0x')
+          ) {
+            throw new Error('The address or message hash is invalid');
+          }
+          const signature = await this.client.signMessage(messageHash);
+          return signature || '0x';
+        } catch (_) {
+          return '0x';
+        }
+      }
+
+      case 'eth_signTypedData':
+      case 'eth_signTypedData_v4': {
+        try {
+          const [address, typedData] = params;
+          const parsedTypedData =
+            typeof typedData === 'string' ? JSON.parse(typedData) : typedData;
+          if (this.address.toLowerCase() !== address.toLowerCase()) {
+            throw new Error('The address is invalid');
+          }
+          const signature = await this.client.signTypedData(parsedTypedData);
+          return signature || '0x';
+        } catch (_) {
+          return '0x';
+        }
       }
 
       case 'eth_sendTransaction': {
