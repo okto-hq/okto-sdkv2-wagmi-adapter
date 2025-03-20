@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.3.0
+
+### Minor Changes
+
+- 9988951: add msg signing
+
 ## 0.2.2
 
 ### Patch Changes
