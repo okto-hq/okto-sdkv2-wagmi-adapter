@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.3.1
+
+### Patch Changes
+
+- a247779: fix minor login bugs
+
 ## 0.3.0
 
 ### Minor Changes
