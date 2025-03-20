@@ -96,10 +96,11 @@ Use `wagmi` as you normally would!
 
 ## Schema
 
-| Param              | Description                     | Type      |
-| ------------------ | ------------------------------- | --------- |
-| `environment`      | Environement to use for the SDK | `sandbox` |
-| `clientPrivateKey` | Client private key              | `string`  |
-| `clientSWA`        | Client SWA                      | `string`  |
+| Param              | Description                                                                                                              | Type                |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------- |
+| `environment`      | Environement to use for the SDK                                                                                          | `sandbox`           |
+| `clientPrivateKey` | Client private key                                                                                                       | `string`            |
+| `clientSWA`        | Client SWA                                                                                                               | `string`            |
+| `googleClientId`   | Google client ID used for Google Sign-In.<br>**Make sure to add custom value here for production or deployed versions.** | `string` (optional) |
 
 ---
