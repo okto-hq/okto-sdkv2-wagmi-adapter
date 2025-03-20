@@ -224,6 +224,8 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
   async updateAccount(): Promise<void> {
     const accounts = await this.getEthAccounts();
 
+    await this.client.syncUserKeys();
+
     this.chain = accounts[0]!.chainId;
     this.address = accounts[0]!.address;
 
