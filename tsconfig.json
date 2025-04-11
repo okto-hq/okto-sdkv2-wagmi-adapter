@@ -33,6 +33,8 @@
     "commitlint.config.js",
     "commitlint.config.cjs",
     "example",
-    "example/**/*"
+    "example/**/*",
+    "examples",
+    "examples/**/*"
   ]
 }
