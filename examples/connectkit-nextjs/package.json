@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@okto_web3/wagmi-adapter": "file:../..",
     "@tanstack/react-query": "^5.72.2",
     "connectkit": "^1.9.0",
     "next": "15.3.0",
@@ -26,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "pino-pretty": "^7.0.0"
   }
 }
