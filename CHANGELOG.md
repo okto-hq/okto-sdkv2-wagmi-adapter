@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.4.1
+
+### Patch Changes
+
+- 57bddc3: update core depedencies
+
 ## 0.4.0
 
 ### Minor Changes
