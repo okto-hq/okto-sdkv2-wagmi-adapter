@@ -1,5 +1,17 @@
 # @okto_web3/wagmi-adapter
 
+## 0.4.1
+
+### Patch Changes
+
+- 57bddc3: update core depedencies
+
+## 0.4.0
+
+### Minor Changes
+
+- 68df2c4: add rainbowkit support
+
 ## 0.3.1
 
 ### Patch Changes
