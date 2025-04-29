@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.4.2
+
+### Patch Changes
+
+- 5057fab: update dependencies
+
 ## 0.4.1
 
 ### Patch Changes
