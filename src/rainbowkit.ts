@@ -3,7 +3,7 @@ import { createConnector } from '@wagmi/core';
 import { okto, type OktoParameters } from './connector';
 
 export interface OktoSdkParams {
-  params: OktoParameters;
+  params: Omit<OktoParameters, 'loginType'>;
   type: 'google' | 'generic';
 }
 
@@ -40,7 +40,7 @@ export const getOktoSdkConnector = ({ params, type }: OktoSdkParams) => {
     iconUrl: iconUrl,
     createConnector: (walletDetails: WalletDetailsParams) => {
       return createConnector((config) => ({
-        ...okto(params)(config),
+        ...okto({ loginType: type, ...params })(config),
         ...walletDetails,
       }));
     },
