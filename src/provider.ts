@@ -1,6 +1,10 @@
 import { OktoClient } from '@okto_web3/react-sdk';
 import { getAccount, getOrdersHistory } from '@okto_web3/react-sdk/explorer';
-import type { SocialAuthType, Wallet } from '@okto_web3/react-sdk/types';
+import type {
+  Address,
+  SocialAuthType,
+  Wallet,
+} from '@okto_web3/react-sdk/types';
 import { evmRawTransaction } from '@okto_web3/react-sdk/userop';
 import { EventEmitter } from 'events';
 import type { EIP1193Provider } from './types.js';
@@ -28,26 +32,28 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
 
     if (!this.client.userSWA) {
       if (data.provider === 'generic') {
-        await this.client.authenticateWithWebView({
-          onSuccess(user) {
-            console.log('User authenticated', user);
-          },
-          onError(error) {
-            throw new Error('Failed to login', {
-              cause: error,
-            });
-          },
-          onClose() {
-            console.log('WebView closed');
-          },
+        await new Promise((resolve, reject) => {
+          this.client.authenticateWithWebView({
+            onSuccess(user) {
+              resolve(user as Address);
+            },
+            onError(error) {
+              reject(
+                new Error('Failed to login', {
+                  cause: error,
+                }),
+              );
+            },
+            onClose() {
+              reject(new Error('WebView closed by user'));
+            },
+          });
         });
       } else {
         await this.client.loginUsingSocial(data.provider);
       }
     }
-
     await this.updateAccount();
-    return;
   }
 
   async disconnect(): Promise<void> {
