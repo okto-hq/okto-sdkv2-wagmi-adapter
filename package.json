@@ -1,10 +1,14 @@
 {
   "name": "@okto_web3/wagmi-adapter",
-  "version": "0.4.1",
+  "version": "0.4.1-beta.1",
   "description": "Wagmi Adapter for Okto SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json && tsc-esm-fix --target='dist' --ext='.js'",
     "format": "prettier --write .",
