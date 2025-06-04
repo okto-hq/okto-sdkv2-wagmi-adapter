@@ -15,8 +15,8 @@ importers:
         specifier: ^1.2.1
         version: 1.3.0
       '@okto_web3/react-sdk':
-        specifier: 0.5.2-dev.30
-        version: 0.5.2-dev.30(bufferutil@4.0.9)(react@18.3.1)(typescript@5.8.3)(utf-8-validate@5.0.10)
+        specifier: 0.5.3-dev.14
+        version: 0.5.3-dev.14(bufferutil@4.0.9)(react@18.3.1)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@wagmi/connectors':
         specifier: ^5.7.7
         version: 5.8.1(@types/react@18.3.20)(@wagmi/core@2.17.1(@tanstack/query-core@5.75.0)(@types/react@18.3.20)(react@18.3.1)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@18.3.1))(viem@2.28.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.4)))(bufferutil@4.0.9)(react@18.3.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(viem@2.28.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.4))(zod@3.24.4)
@@ -382,11 +382,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@okto_web3/core-js-sdk@0.6.2-dev.29':
-    resolution: {integrity: sha512-43rAf7sdodSPX3O+yNerYxEhsoGk5nwtcrMq6LACCFbDNmI1MNSIDS29eYiKO6vBJqli2Cun6lzZDXDaTHciYQ==}
+  '@okto_web3/core-js-sdk@0.6.4-dev.69':
+    resolution: {integrity: sha512-QdhuqFg/JTpLzKgWarCge70JfRpPUJ0/QFyVgjZjhan9VAN2C0gRYivXv+a9rsAN2wgKgikwvu2dJILr/NhrXw==}
 
-  '@okto_web3/react-sdk@0.5.2-dev.30':
-    resolution: {integrity: sha512-4gQwm6AGUqgsU/D7FqPJmYFZ4hL0BWR+4qc0EYyo4eaRF5NasRSlKOsrkrcozrB+Gn4MXkxdP/WTult0VK4EEA==}
+  '@okto_web3/react-sdk@0.5.3-dev.14':
+    resolution: {integrity: sha512-T0KO2Tbm6lSSne/13ay/hqjzjE4C5Y/7gpufa2opruSC7FMLC1Z8EJRSXuYM/DSPFFa8Cr6P/3RVrYm1KC2m7Q==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -3017,7 +3017,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@okto_web3/core-js-sdk@0.6.2-dev.29(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@okto_web3/core-js-sdk@0.6.4-dev.69(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
       '@noble/curves': 1.9.0
       '@noble/hashes': 1.8.0
@@ -3033,10 +3033,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@okto_web3/react-sdk@0.5.2-dev.30(bufferutil@4.0.9)(react@18.3.1)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@okto_web3/react-sdk@0.5.3-dev.14(bufferutil@4.0.9)(react@18.3.1)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
       '@noble/ciphers': 1.3.0
-      '@okto_web3/core-js-sdk': 0.6.2-dev.29(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@okto_web3/core-js-sdk': 0.6.4-dev.69(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       react: 18.3.1
     transitivePeerDependencies:
       - bufferutil
@@ -5041,8 +5041,8 @@ snapshots:
   ox@0.6.7(typescript@5.8.3)(zod@3.24.4):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.8.1
-      '@noble/hashes': 1.7.1
+      '@noble/curves': 1.9.0
+      '@noble/hashes': 1.8.0
       '@scure/bip32': 1.6.2
       '@scure/bip39': 1.5.4
       abitype: 1.0.8(typescript@5.8.3)(zod@3.24.4)
