@@ -7,7 +7,7 @@ import {
   rainbowWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import { createConfig, http } from 'wagmi';
-import { mainnet, polygon, sepolia } from 'wagmi/chains';
+import { arbitrum, base, polygon } from 'wagmi/chains';
 
 const oktoParams: OktoParameters = {
   environment: process.env.NEXT_PUBLIC_OKTO_ENVIRONMENT,
@@ -24,6 +24,10 @@ const connectors = connectorsForWallets(
           type: 'google',
           params: oktoParams,
         }),
+        getOktoSdkConnector({
+          type: 'generic',
+          params: oktoParams,
+        }),
       ],
     },
     {
@@ -38,12 +42,12 @@ const connectors = connectorsForWallets(
 );
 
 export const config = createConfig({
-  chains: [mainnet, sepolia, polygon],
+  chains: [arbitrum, base, polygon],
   connectors: connectors,
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
+    [arbitrum.id]: http(),
+    [base.id]: http(),
     [polygon.id]: http(),
   },
-  multiInjectedProviderDiscovery: false,
+  multiInjectedProviderDiscovery: true,
 });

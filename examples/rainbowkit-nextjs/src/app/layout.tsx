@@ -5,7 +5,6 @@ import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Script from 'next/script';
 import { WagmiProvider } from 'wagmi';
 import './globals.css';
 
@@ -28,7 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script src="https://accounts.google.com/gsi/client" async defer />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

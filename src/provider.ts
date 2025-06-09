@@ -1,10 +1,16 @@
-import { getAccount, getOrdersHistory } from '@okto_web3/core-js-sdk/explorer';
-import type { Wallet } from '@okto_web3/core-js-sdk/types';
-import { evmRawTransaction } from '@okto_web3/core-js-sdk/userop';
+import { OktoClient } from '@okto_web3/react-sdk';
+import { getAccount, getOrdersHistory } from '@okto_web3/react-sdk/explorer';
+import type {
+  Address,
+  SocialAuthType,
+  Wallet,
+} from '@okto_web3/react-sdk/types';
+import { evmRawTransaction } from '@okto_web3/react-sdk/userop';
 import { EventEmitter } from 'events';
-import type { OktoClient } from './client.js';
 import type { EIP1193Provider } from './types.js';
 import { numberToHex } from './utils/converstion.js';
+
+export type OktoLoginTypes = 'generic' | SocialAuthType;
 
 // The API is based on Ethereum JavaScript API Provider Standard. Link: https://eips.ethereum.org/EIPS/eip-1193
 export class OktoProvider extends EventEmitter implements EIP1193Provider {
@@ -21,23 +27,33 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
     this.accounts = [];
   }
 
-  async connect(data: { idToken: string; provider: 'google' }): Promise<void> {
+  async connect(data: { provider: OktoLoginTypes }): Promise<void> {
     this.emit('connect', { chainId: this.chainId });
 
     if (!this.client.userSWA) {
-      const response = await this.client.loginUsingOAuth({
-        provider: data.provider,
-        idToken: data.idToken,
-      });
-
-      if (!response) {
-        throw new Error('Failed to login');
+      if (data.provider === 'generic') {
+        await new Promise((resolve, reject) => {
+          this.client.authenticateWithWebView({
+            onSuccess(user) {
+              resolve(user as Address);
+            },
+            onError(error) {
+              reject(
+                new Error('Failed to login', {
+                  cause: error,
+                }),
+              );
+            },
+            onClose() {
+              reject(new Error('WebView closed by user'));
+            },
+          });
+        });
+      } else {
+        await this.client.loginUsingSocial(data.provider);
       }
     }
-
     await this.updateAccount();
-
-    return;
   }
 
   async disconnect(): Promise<void> {
@@ -62,7 +78,6 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
       case 'eth_chainId':
         return numberToHex(this.chainId);
       case 'wallet_switchEthereumChain': {
-        console.log('Switching chainId', params);
         this.updateChainId(params[0]);
         return true;
       }
@@ -114,8 +129,6 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
 
       case 'eth_sendTransaction': {
         try {
-          console.log('Sending transaction', params);
-
           // `value` or `data` can be explicitly set as `undefined` for example in Viem. The spread will overwrite the fallback value.
           const tx = {
             ...params[0],
@@ -133,8 +146,6 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
             tx.value = BigInt(tx.value);
           }
 
-          console.log('Sending transaction', tx);
-
           const rawTxnUserOp = await evmRawTransaction(this.client, {
             caip2Id: `eip155:${this.chainId}`,
             transaction: {
@@ -149,18 +160,12 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
 
           const res = await this.client.executeUserOp(rawTxnSignedUserOp);
 
-          console.log('Transaction sent', res);
-
           let txhash = '';
           let retryCount = 0;
           while (true) {
-            console.log(`Checking transaction hash #${retryCount}`, res);
-
             const order = await getOrdersHistory(this.client, {
               intentId: res,
             });
-
-            console.log('Order', order);
 
             if (order.length > 0 && order[0]!.downstreamTransactionHash[0]) {
               txhash = order[0]!.downstreamTransactionHash[0];
@@ -192,11 +197,8 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
             );
           }
 
-          console.log('Transaction hash', txhash);
-
           return txhash;
         } catch (error) {
-          console.error('Error sending transaction', error);
           throw error;
         }
       }
@@ -265,8 +267,6 @@ export class OktoProvider extends EventEmitter implements EIP1193Provider {
   private async updateChainId(chainId: number): Promise<void> {
     const accounts = await this.getEthAccounts();
     const account = accounts.find((account) => account.chainId === chainId);
-
-    console.log('Updating chainId', chainId);
 
     if (!account) {
       throw new Error('Chain not supported');
