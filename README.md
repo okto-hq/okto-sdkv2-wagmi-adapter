@@ -8,7 +8,7 @@ Refer to the [Okto SDK documentation](https://docs.okto.tech/) for more informat
 ## Installation
 
 ```bash
-npm i @okto_web3/wagmi-adapter
+npm i @okto_web3/wagmi-adapter@latest @okto_web3/react-sdk@latest
 ```
 
 ## Setup
