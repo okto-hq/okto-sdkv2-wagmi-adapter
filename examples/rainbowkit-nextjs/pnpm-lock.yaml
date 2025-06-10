@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@okto_web3/react-sdk':
-        specifier: 0.5.3-dev.15
-        version: 0.5.3-dev.15(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)
+        specifier: ^1.0.2
+        version: 1.0.2(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@okto_web3/wagmi-adapter':
         specifier: file:../..
-        version: file:../..(cbbb9fde38a74bda83eb895b16c496cd)
+        version: file:../..(bdfd33fbcc9ef2c4998a158706ed9a1b)
       '@rainbow-me/rainbowkit':
         specifier: ^2.2.4
         version: 2.2.4(@tanstack/react-query@5.72.2(react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2))(wagmi@2.14.16(@tanstack/query-core@5.72.2)(@tanstack/react-query@5.72.2(react@19.1.0))(@types/react@19.1.0)(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2))(zod@3.24.2))
@@ -553,18 +553,18 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@okto_web3/core-js-sdk@0.6.4-dev.73':
-    resolution: {integrity: sha512-LYefBzrgr4HHICF55z9cKyMbNVS4Or3hgfc+rf4ADnuJ5p+RXePjKqnlQuP5xEydMiEj8QZfBc7wLk72uwWB/g==}
+  '@okto_web3/core-js-sdk@1.0.2':
+    resolution: {integrity: sha512-++oGRtMksV4TsWmY3HodVKBZxtCa47fruQE2DEYl5VAueYp6NuUBFiKsP9cM8jM41nVJN00aqMahTTEDqfuRTQ==}
 
-  '@okto_web3/react-sdk@0.5.3-dev.15':
-    resolution: {integrity: sha512-q4FUAAc3CW2+h319Wjk5XTK8I1O4SJhbwOB41eRzlHwbwyt3fN7c0DlRnZp6ADCkB8kbNG3OmSfmRfxRkVe68Q==}
+  '@okto_web3/react-sdk@1.0.2':
+    resolution: {integrity: sha512-U9ennR7hmhN0uafwk5QaM9hCXcgxiFiLCxpnhOijiUQuS6bbfJHl2qR6MsaIIDsZdlLSPhsySBwDPIBwD1uFiA==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@okto_web3/wagmi-adapter@file:../..':
     resolution: {directory: ../.., type: directory}
     peerDependencies:
-      '@okto_web3/react-sdk': '>= 1.0.0 < 2'
+      '@okto_web3/react-sdk': '>= 1.0.2 < 2'
       '@rainbow-me/rainbowkit': 2.x
       react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       viem: 2.x
@@ -3926,7 +3926,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@okto_web3/core-js-sdk@0.6.4-dev.73(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@okto_web3/core-js-sdk@1.0.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
       '@noble/curves': 1.8.1
       '@noble/hashes': 1.7.1
@@ -3942,10 +3942,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@okto_web3/react-sdk@0.5.3-dev.15(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@okto_web3/react-sdk@1.0.2(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
       '@noble/ciphers': 1.2.1
-      '@okto_web3/core-js-sdk': 0.6.4-dev.73(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@okto_web3/core-js-sdk': 1.0.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       react: 19.1.0
     transitivePeerDependencies:
       - bufferutil
@@ -3953,11 +3953,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@okto_web3/wagmi-adapter@file:../..(cbbb9fde38a74bda83eb895b16c496cd)':
+  '@okto_web3/wagmi-adapter@file:../..(bdfd33fbcc9ef2c4998a158706ed9a1b)':
     dependencies:
       '@changesets/cli': 2.28.1
       '@noble/ciphers': 1.2.1
-      '@okto_web3/react-sdk': 0.5.3-dev.15(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@okto_web3/react-sdk': 1.0.2(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@rainbow-me/rainbowkit': 2.2.4(@tanstack/react-query@5.72.2(react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2))(wagmi@2.14.16(@tanstack/query-core@5.72.2)(@tanstack/react-query@5.72.2(react@19.1.0))(@types/react@19.1.0)(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2))(zod@3.24.2))
       '@wagmi/connectors': 5.7.12(@types/react@19.1.0)(@wagmi/core@2.16.7(@tanstack/query-core@5.72.2)(@types/react@19.1.0)(react@19.1.0)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@19.1.0))(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2)))(bufferutil@4.0.9)(react@19.1.0)(typescript@5.8.3)(utf-8-validate@5.0.10)(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2))(zod@3.24.2)
       '@wagmi/core': 2.16.7(@tanstack/query-core@5.72.2)(@types/react@19.1.0)(react@19.1.0)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@19.1.0))(viem@2.26.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.2))
