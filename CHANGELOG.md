@@ -1,5 +1,17 @@
 # @okto_web3/wagmi-adapter
 
+## 1.0.0
+
+### Major Changes
+
+- d7d3e3f: update version to 1.0.0 and add onboarding screen to changelog
+
+## 0.5.0
+
+### Minor Changes
+
+- d7d3e3f: add onboarding screen
+
 ## 0.4.1
 
 ### Patch Changes
