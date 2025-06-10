@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@okto_web3/wagmi-adapter": "file:../..",
+    "@okto_web3/react-sdk": "^1.0.2",
     "@rainbow-me/rainbowkit": "^2.2.4",
     "@tanstack/react-query": "^5.72.2",
     "next": "15.3.0",

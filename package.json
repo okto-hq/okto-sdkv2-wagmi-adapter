@@ -1,14 +1,20 @@
 {
   "name": "@okto_web3/wagmi-adapter",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "description": "Wagmi Adapter for Okto SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json && tsc-esm-fix --target='dist' --ext='.js'",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
+    "clean": "rimraf dist",
+    "deepclean": "rimraf dist && rimraf pnpm-lock.yaml && rimraf node_modules",
     "ci": "pnpm run build && pnpm run check-format",
     "local-release": "changeset version && changeset publish",
     "prepublishOnly": "npm run ci",
@@ -19,7 +25,6 @@
   "dependencies": {
     "@changesets/cli": "^2.28.0",
     "@noble/ciphers": "^1.2.1",
-    "@okto_web3/core-js-sdk": "0.6.2",
     "@wagmi/connectors": "^5.7.7",
     "@wagmi/core": "^2.16.4",
     "tsc-esm-fix": "^3.1.2",
@@ -29,18 +34,26 @@
     "@changesets/cli": "^2.28.0",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
+    "@okto_web3/react-sdk": "^1.0.2",
     "@rainbow-me/rainbowkit": "^2.2.4",
     "@types/node": "^22.13.4",
+    "@types/react": "^18.2.0",
     "changeset": "^0.2.6",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
     "prettier": "^3.5.1",
-    "typescript": "^5.7.3"
+    "react": "^18.2.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3",
+    "wagmi": "^2.15.0"
   },
   "peerDependencies": {
+    "@okto_web3/react-sdk": ">= 1.0.2 < 2",
+    "@rainbow-me/rainbowkit": "2.x",
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "viem": "2.x",
-    "@rainbow-me/rainbowkit": "2.x"
+    "wagmi": "2.x"
   },
   "config": {
     "commitizen": {
