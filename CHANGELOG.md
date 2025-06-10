@@ -1,5 +1,11 @@
 # @okto_web3/wagmi-adapter
 
+## 0.5.0
+
+### Minor Changes
+
+- d7d3e3f: add onboarding screen
+
 ## 0.4.1
 
 ### Patch Changes
